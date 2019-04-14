@@ -11,7 +11,7 @@ def load_library(yaml_file)
     response["get_emoticon"][emos[0]] = emos[1]
   end
   response
-end	
+end
 
 
  def get_japanese_emoticon	def get_japanese_emoticon(yaml_file, emoticon)
@@ -27,7 +27,7 @@ end
   else
     return response
   end
-end	
+end
 
 
  def get_english_meaning	def get_english_meaning(yaml_file, emoticon)
