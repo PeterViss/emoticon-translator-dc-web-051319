@@ -12,7 +12,7 @@ def load_library(yaml_file)
   end
   response
 end
-
+end 
 
  def get_japanese_emoticon	def get_japanese_emoticon(yaml_file, emoticon)
   # code goes here	  library = load_library(yaml_file)
@@ -28,7 +28,7 @@ end
     return response
   end
 end
-
+end
 
  def get_english_meaning	def get_english_meaning(yaml_file, emoticon)
   # code goes here	  library = load_library(yaml_file)
@@ -43,4 +43,5 @@ end
   else
     return response
   end
+end
 end
