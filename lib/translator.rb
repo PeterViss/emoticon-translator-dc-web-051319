@@ -12,9 +12,9 @@ def load_library(yaml_file)
   end
   response
 end
-end
 
- def get_japanese_emoticon	def get_japanese_emoticon(yaml_file, emoticon)
+
+def get_japanese_emoticon(yaml_file, emoticon)
   # code goes here	  library = load_library(yaml_file)
   response = nil
   library["get_emoticon"].each do |english, japanese|
@@ -28,9 +28,9 @@ end
     return response
   end
 end
-end
 
- def get_english_meaning	def get_english_meaning(yaml_file, emoticon)
+
+def get_english_meaning(yaml_file, emoticon)
   # code goes here	  library = load_library(yaml_file)
   response = nil
   library["get_meaning"].each do |emo, trans|
@@ -43,5 +43,4 @@ end
   else
     return response
   end
-end
 end
