@@ -14,7 +14,15 @@ translation.each do |names, emotes|
 end
 
 
-def get_japanese_emoticon
+def get_japanese_emoticon(yaml_file, emoticon)
+  library = load_library(yaml_file)
+  library["get_emoticon"].each do |english, japanese|
+    if emoticon == english
+      library["get_emoticon"][japanese]
+    else
+      "Sorry, that emoticon was not found"
+    end
+  end
   # code goes here
 
 end
