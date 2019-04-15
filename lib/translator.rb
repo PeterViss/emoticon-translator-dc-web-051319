@@ -30,7 +30,7 @@ def get_japanese_emoticon(yaml_file, emoticon)
 end
   # code goes here
 
-end
+
 
 
 def get_english_meaning
