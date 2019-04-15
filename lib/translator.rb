@@ -4,8 +4,13 @@ require 'yaml'
 # require modules here
 
 def load_library(yaml_file)
-  # code goes here
-
+response = {"get_meaning" => {}, "get_emoticon" => {}}
+translation = YAML.load_file(yaml_file)
+translation.each do |names, emotes|
+  response["get_meaning"][emotes[1]] = names 
+  response["get_emoticon"][emotes[0]] = emotes[1]
+  end  # code goes here
+  response
 end
 
 
