@@ -44,6 +44,3 @@ def get_english_meaning(yaml_file, emoticon)
 end
 
   # code goes here
-
-end
-learn
