@@ -33,7 +33,13 @@ end
 
 
 
-def get_english_meaning
+def get_english_meaning(yaml_file, emoticon)
+    library = load_library(yaml_file)
+    return "Sorry, that emoticon was not found" if
+    library["get_meaning"][emote].nil?
+      library["get_meaning"][emote]
+    end
+
   # code goes here
 
 end
