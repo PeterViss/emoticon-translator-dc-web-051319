@@ -40,6 +40,7 @@ def get_english_meaning(yaml_file, emoticon)
       library["get_meaning"][emote]
     end
   end
+end
 
   # code goes here
 
