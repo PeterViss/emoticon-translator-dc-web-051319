@@ -38,7 +38,7 @@ def get_english_meaning(yaml_file, emoticon)
     response = nil
     library["get_meaning"] do |emote, meaning|
       if emoticon == emote
-        response == meaning
+        response = meaning
       end
     end
     if response == nil
