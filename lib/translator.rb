@@ -3,39 +3,24 @@ require 'yaml'
 
 # require modules here
 
-def load_library(yaml_file)
-response = {"get_meaning" => {}, "get_emoticon" => {}}
-translation = YAML.load_file(yaml_file)
-translation.each do |names, emotes|
-  response["get_meaning"][emotes[1]] = names
-  response["get_emoticon"][emotes[0]] = emotes[1]
-  end  # code goes here
-  response
+def load_library(directory)
+  # code goes here	  get_meaning, get_emoticon = {}, {}
+  YAML.load_file(directory).each do |desc, data|
+    get_meaning[data[1]] = desc
+    get_emoticon[data[0]] = data[1]
+  end
+  translations = {"get_meaning" => get_meaning, "get_emoticon" => get_emoticon}
+  translations
+	end
+
+def get_japanese_emoticon(library, emoticon)
+  # code goes here	  dictionary = load_library(library)
+  return "Sorry, that emoticon was not found" if dictionary["get_emoticon"][emoticon].nil?
+  dictionary["get_emoticon"][emoticon]
 end
 
-
-def get_japanese_emoticon(yaml_file, emoticon)
-  library = load_library(yaml_file)
-  response = nil
-  library["get_emoticon"].each do |english, japanese|
-    if emoticon == english
-      response = japanese
-    end
-  end
-  if response == nil
-    "Sorry, that emoticon was not found"
-  else
-    return response
-  end
-end
-  # code goes here
-
-
-
-
-def get_english_meaning(yaml_file, emoticon)
-    library = load_library(yaml_file)
-    return "Sorry, that emoticon was not found" if
-    library["get_meaning"][emote].nil?
-      library["get_meaning"][emote]
-    end
+def get_english_meaning(library, emoticon)
+  # code goes here	  dictionary = load_library(library)
+  return "Sorry, that emoticon was not found" if dictionary["get_meaning"][emoticon].nil?
+  dictionary["get_meaning"][emoticon]
+end 	
