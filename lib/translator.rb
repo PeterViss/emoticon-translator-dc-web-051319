@@ -36,6 +36,16 @@ end
 def get_english_meaning(yaml_file, emoticon)
     library = load_library(yaml_file)
     response = nil
+    library["get_meaning"] do |emote, meaning|
+      if emoticon == emote
+        response == meaning
+      end
+    end
+    if response == nil
+      "Sorry, that emoticon was not found"
+    else
+      return response
+    end
   end
 
   # code goes here
